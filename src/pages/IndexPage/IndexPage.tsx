@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { initBackButton, initMainButton } from '@telegram-apps/sdk';
+import { SDKProvider } from '@telegram-apps/sdk-react';
 
 const [mb, cleanupMb] = initMainButton();
 const [bb, cleanupBb] = initBackButton();
@@ -32,8 +33,8 @@ cleanupBb();
 
 export const IndexPage: FC = () => {
   return (
-    <>
+    <SDKProvider acceptCustomStyles debug>
       <h1>Telegram Web App</h1>
-    </>
+    </SDKProvider>
   );
 };
