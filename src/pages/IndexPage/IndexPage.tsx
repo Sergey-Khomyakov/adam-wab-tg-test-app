@@ -18,9 +18,9 @@ bb.on('click', () => {
 
 // Configure the MainButton.
 mb
-  .setBgColor('#ff0000')
+  .setBgColor('#1D4F9B')
   .setTextColor('#ffffff')
-  .setText('Expand')
+  .setText('Нажми на меня')
   .enable()
   .show();
 
