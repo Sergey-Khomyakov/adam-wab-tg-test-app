@@ -1,43 +1,19 @@
-import type { FC } from 'react';
-import { initBackButton, initMainButton, initSettingsButton } from '@telegram-apps/sdk';
-import { SDKProvider } from '@telegram-apps/sdk-react';
+import { FC, useEffect } from 'react';
+import { SDKProvider, useBackButton } from '@telegram-apps/sdk-react';
 
-const [mb, cleanupMb] = initMainButton();
-const [bb, cleanupBb] = initBackButton();
-const [settingsButton] = initSettingsButton();
-
-// Clicking the MainButton hides it and shows the BackButton.
-mb.on('click', () => {
-  mb.hide();
-  bb.show();
-});
-
-// Clicking the BackButton hides it and shows the MainButton.
-bb.on('click', () => {
-  mb.show();
-  bb.hide();
-});
-
-// Configure the MainButton.
-mb
-  .setBgColor('#1D4F9B')
-  .setTextColor('#ffffff')
-  .setText('Нажми на меня')
-  .enable()
-  .show();
-
-// When we don't need BackButton and MainButton anymore, we can 
-// perform a cleanup. After calling a cleanup, the initialized 
-// component will not receive any events.
-cleanupMb();
-cleanupBb();
-
-settingsButton.hide();
 
 export const IndexPage: FC = () => {
+  const bb = useBackButton(true); // will be undefined or BackButton.
+
+  useEffect(() => {
+    if (bb) {
+      // Here we can safely work with the BackButton.
+    }
+  }, [bb]);
+
   return (
     <SDKProvider acceptCustomStyles debug>
-      <h1>Telegram Web App v2</h1>
+      <h1>Telegram Web App v3</h1>
     </SDKProvider>
   );
 };
