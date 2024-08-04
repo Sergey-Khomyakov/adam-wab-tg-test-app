@@ -1,15 +1,15 @@
-import { FC, useEffect } from 'react';
-import { SDKProvider, useBackButton } from '@telegram-apps/sdk-react';
+import { FC } from 'react';
+import { SDKProvider } from '@telegram-apps/sdk-react';
 
 
 export const IndexPage: FC = () => {
-  const bb = useBackButton(true); // will be undefined or BackButton.
+  // const bb = useBackButton(true); // will be undefined or BackButton.
 
-  useEffect(() => {
-    if (bb) {
-      // Here we can safely work with the BackButton.
-    }
-  }, [bb]);
+  // useEffect(() => {
+  //   if (bb) {
+  //     // Here we can safely work with the BackButton.
+  //   }
+  // }, [bb]);
 
   return (
     <SDKProvider acceptCustomStyles debug>
