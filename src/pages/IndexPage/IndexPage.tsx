@@ -1,9 +1,10 @@
 import type { FC } from 'react';
-import { initBackButton, initMainButton } from '@telegram-apps/sdk';
+import { initBackButton, initMainButton, initSettingsButton } from '@telegram-apps/sdk';
 import { SDKProvider } from '@telegram-apps/sdk-react';
 
 const [mb, cleanupMb] = initMainButton();
 const [bb, cleanupBb] = initBackButton();
+const [settingsButton] = initSettingsButton();
 
 // Clicking the MainButton hides it and shows the BackButton.
 mb.on('click', () => {
@@ -30,6 +31,8 @@ mb
 // component will not receive any events.
 cleanupMb();
 cleanupBb();
+
+settingsButton.hide();
 
 export const IndexPage: FC = () => {
   return (
