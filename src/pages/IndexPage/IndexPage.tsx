@@ -37,7 +37,7 @@ settingsButton.hide();
 export const IndexPage: FC = () => {
   return (
     <SDKProvider acceptCustomStyles debug>
-      <h1>Telegram Web App</h1>
+      <h1>Telegram Web App v2</h1>
     </SDKProvider>
   );
 };
