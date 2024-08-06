@@ -35,13 +35,13 @@ const Inner: FC = () => {
 
   return (
     <TonConnectUIProvider manifestUrl={manifestUrl}>
-      <App/>
+      <App />
     </TonConnectUIProvider>
   );
 };
 
 export const Root: FC = () => (
   <ErrorBoundary fallback={ErrorBoundaryError}>
-    <Inner/>
+    <Inner />
   </ErrorBoundary>
 );
