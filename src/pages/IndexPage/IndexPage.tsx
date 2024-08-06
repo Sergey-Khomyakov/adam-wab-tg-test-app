@@ -1,12 +1,7 @@
 import { FC, useEffect } from 'react';
 import {
   SDKProvider,
-  initInitData,
-  useBackButton,
-  useBackButtonRaw,
   useViewport,
-  useViewportRaw,
-  useBiometryManagerRaw,
 } from '@telegram-apps/sdk-react';
 
 // Viewport is being initialized asynchronously, so signal may return undefined.
