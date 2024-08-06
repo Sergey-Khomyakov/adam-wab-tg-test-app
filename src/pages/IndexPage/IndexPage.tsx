@@ -14,7 +14,7 @@ console.log(initDataRaw);
 export const IndexPage: FC = () => {
   return (
     <SDKProvider acceptCustomStyles debug>
-      <h1>Telegram Web App v3</h1>
+      <h1>Telegram Web App v4</h1>
     </SDKProvider>
   );
 };
