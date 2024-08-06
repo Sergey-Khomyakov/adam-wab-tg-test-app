@@ -1,6 +1,16 @@
-import { FC } from 'react';
-import { SDKProvider, useMainButtonRaw } from '@telegram-apps/sdk-react';
+import { FC, useEffect } from 'react';
+import { SDKProvider, useBackButton } from '@telegram-apps/sdk-react';
 
+
+function Component() {
+  const bb = useBackButton(true); // will be undefined or BackButton.
+
+  useEffect(() => {
+    if (bb) {
+      // Here we can safely work with the BackButton.
+    }
+  }, [bb]);
+}
 
 /**
  * Renders the IndexPage component.
@@ -8,10 +18,7 @@ import { SDKProvider, useMainButtonRaw } from '@telegram-apps/sdk-react';
  * @return {JSX.Element} The rendered IndexPage component.
  */
 export const IndexPage: FC = () => {
-
-  const mainButton = useMainButtonRaw();
-  mainButton?.result?.show();
-
+  Component();
   return (
     <SDKProvider acceptCustomStyles debug>
       <h1>Telegram Web App v4</h1>
