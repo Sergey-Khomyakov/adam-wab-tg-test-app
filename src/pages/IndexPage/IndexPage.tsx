@@ -1,16 +1,5 @@
-import { FC, useEffect } from 'react';
-import { SDKProvider, useBackButton } from '@telegram-apps/sdk-react';
-
-
-function Component() {
-  const bb = useBackButton(true); // will be undefined or BackButton.
-
-  useEffect(() => {
-    if (bb) {
-      // Here we can safely work with the BackButton.
-    }
-  }, [bb]);
-}
+import { FC } from 'react';
+import { SDKProvider, initInitData } from '@telegram-apps/sdk-react';
 
 /**
  * Renders the IndexPage component.
@@ -18,10 +7,11 @@ function Component() {
  * @return {JSX.Element} The rendered IndexPage component.
  */
 export const IndexPage: FC = () => {
-  Component();
+  const data = initInitData();
+  console.log(data);
   return (
     <SDKProvider acceptCustomStyles debug>
-      <h1>Telegram Web App v4</h1>
+      <h1>Telegram Web App v5</h1>
     </SDKProvider>
   );
 };
