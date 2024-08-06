@@ -1,8 +1,11 @@
 import { FC } from 'react';
-import { SDKProvider, BrowserNavigator } from '@telegram-apps/sdk-react';
+import { SDKProvider, BrowserNavigator, retrieveLaunchParams } from '@telegram-apps/sdk-react';
 
 new BrowserNavigator(['/index'], 0);
 
+const { initDataRaw } = retrieveLaunchParams();
+
+console.log(initDataRaw);
 /**
  * Renders the IndexPage component.
  *
