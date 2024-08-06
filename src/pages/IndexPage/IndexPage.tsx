@@ -1,5 +1,7 @@
 import { FC } from 'react';
-import { SDKProvider } from '@telegram-apps/sdk-react';
+import { SDKProvider, BrowserNavigator } from '@telegram-apps/sdk-react';
+
+new BrowserNavigator(['/index'], 0);
 
 /**
  * Renders the IndexPage component.
