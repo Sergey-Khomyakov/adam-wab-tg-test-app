@@ -7,8 +7,8 @@ const data = initInitData();
  *
  * @return {JSX.Element} The rendered IndexPage component.
  */
-console.log(data);
 export const IndexPage: FC = () => {
+  console.dir(data);
   return (
     <SDKProvider acceptCustomStyles debug>
       <h1>Telegram Web App v5</h1>
