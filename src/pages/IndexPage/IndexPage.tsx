@@ -2,7 +2,7 @@ import { FC } from 'react';
 import {
   SDKProvider,
   retrieveLaunchParams,
-  postEvent
+  initMiniApp
 } from '@telegram-apps/sdk-react';
 
 
@@ -13,15 +13,12 @@ import {
 */
 export const IndexPage: FC = () => {
   const { initData } = retrieveLaunchParams();
+  const [miniApp] = initMiniApp();
 
-  postEvent('web_app_setup_main_button', { is_visible: true, text: 'Загрузка...' });
-
-  // const viewport = request({
-  //   method: 'web_app_request_phone',
-  //   event: 'web_app_ready'
-  // });
-
-  //console.log(viewport);
+  miniApp.requestContact().then(contact => {
+    console.log(contact);
+  });
+  //postEvent('web_app_setup_main_button', { is_visible: true, text: 'Загрузка...' });
 
   return (
     <SDKProvider acceptCustomStyles debug>
