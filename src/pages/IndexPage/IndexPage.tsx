@@ -12,6 +12,7 @@ import {
 export const IndexPage: FC = () => {
   const { initData } = retrieveLaunchParams();
   const encoding = initData?.user?.username
+  console.dir(initData?.user)
   return (
     <SDKProvider acceptCustomStyles debug>
       <h1>${encoding}</h1>
