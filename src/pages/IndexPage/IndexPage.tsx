@@ -6,14 +6,16 @@ import {
 } from '@telegram-apps/sdk-react';
 
 
-postEvent('web_app_setup_back_button', { is_visible: true });
 /**
  * Renders the IndexPage component.
- *
- * @return {JSX.Element} The rendered IndexPage component.
- */
+*
+* @return {JSX.Element} The rendered IndexPage component.
+*/
 export const IndexPage: FC = () => {
   const { initData } = retrieveLaunchParams();
+
+  postEvent('web_app_setup_back_button', { is_visible: true });
+
   return (
     <SDKProvider acceptCustomStyles debug>
       <h1>Мои данные: </h1>
