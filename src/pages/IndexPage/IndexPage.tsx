@@ -2,17 +2,11 @@ import { FC } from 'react';
 import {
   SDKProvider,
   retrieveLaunchParams,
-  request
+  postEvent
 } from '@telegram-apps/sdk-react';
 
 
-const viewport = await request({
-  method: 'web_app_request_viewport',
-  event: 'viewport_changed'
-});
-
-console.log(viewport);
-
+postEvent('web_app_setup_back_button', { is_visible: true });
 /**
  * Renders the IndexPage component.
  *
