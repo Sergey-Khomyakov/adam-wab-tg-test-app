@@ -2,8 +2,16 @@ import { FC } from 'react';
 import {
   SDKProvider,
   retrieveLaunchParams,
-  initInitData,
+  request
 } from '@telegram-apps/sdk-react';
+
+
+const viewport = await request({
+  method: 'web_app_request_viewport',
+  event: 'viewport_changed'
+});
+
+console.log(viewport);
 
 /**
  * Renders the IndexPage component.
@@ -12,8 +20,6 @@ import {
  */
 export const IndexPage: FC = () => {
   const { initData } = retrieveLaunchParams();
-  const initData2 = initInitData();
-
   return (
     <SDKProvider acceptCustomStyles debug>
       <h1>Мои данные: </h1>
@@ -26,23 +32,6 @@ export const IndexPage: FC = () => {
       <p>пользователь добавил бота в меню вложений: {initData?.user?.addedToAttachmentMenu}</p>
       <p>пользователь разрешил боту отправлять ему сообщения: {initData?.user?.allowsWriteToPm}</p>
       <p>язык пользователя: {initData?.user?.languageCode}</p>
-      <p>queryId: {initData2?.queryId}</p>
-      <p>queryId: {initData2?.user?.id}</p>
     </SDKProvider>
   );
 };
-
-
-// function getUserDataById(id: number | undefined) {
-//   if(id !== undefined){
-//     return fetch(url,
-//       {
-//           method: "POST",
-//           headers: {
-//               "Content-Type": "application/json",
-//           },
-//           body: JSON.stringify(details),
-//       })
-//       .then((response) => response.json());
-//   }
-// }
