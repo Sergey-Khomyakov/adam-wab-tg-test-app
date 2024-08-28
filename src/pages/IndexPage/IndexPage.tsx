@@ -14,7 +14,14 @@ import {
 export const IndexPage: FC = () => {
   const { initData } = retrieveLaunchParams();
 
-  postEvent('web_app_setup_back_button', { is_visible: true });
+  postEvent('web_app_setup_main_button', { is_visible: true, text: 'Загрузка...' });
+
+  // const viewport = request({
+  //   method: 'web_app_request_phone',
+  //   event: 'web_app_ready'
+  // });
+
+  //console.log(viewport);
 
   return (
     <SDKProvider acceptCustomStyles debug>
