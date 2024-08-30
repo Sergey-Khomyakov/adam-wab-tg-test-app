@@ -21,6 +21,28 @@ body {
   --gray-300: #e5e8ed;
   --gray-200: #f4f5f6;
   --gray-100: #f9f9f9;
-  --font-family: "Lato", sans-serif;
-  /* --second-family: "Ubuntu", sans-serif; */
+}
+
+@font-face {
+  src: url("@/assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-family: "Montserrat";
+  font-weight: 100;
+}
+
+@font-face {
+  src: url("@/assets/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-family: "Montserrat";
+  font-weight: 300;
+}
+
+@font-face {
+  src: url("@/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-family: "Montserrat";
+  font-weight: 400;
+}
+
+@font-face {
+  src: url("@/assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-family: "Montserrat";
+  font-weight: 600;
 }
