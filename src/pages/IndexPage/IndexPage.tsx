@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import {
   SDKProvider,
   retrieveLaunchParams,
@@ -14,11 +14,10 @@ import {
 export const IndexPage: FC = () => {
   const { initData } = retrieveLaunchParams();
   const [miniApp] = initMiniApp();
-
-  miniApp.requestContact().then(contact => {
-    console.log(contact);
+  const [phone, setPhone] = useState("");
+  miniApp.requestContact().then(data => {
+    setPhone(data.contact.phoneNumber)
   });
-  //postEvent('web_app_setup_main_button', { is_visible: true, text: 'Загрузка...' });
 
   return (
     <SDKProvider acceptCustomStyles debug>
@@ -32,6 +31,7 @@ export const IndexPage: FC = () => {
       <p>пользователь добавил бота в меню вложений: {initData?.user?.addedToAttachmentMenu}</p>
       <p>пользователь разрешил боту отправлять ему сообщения: {initData?.user?.allowsWriteToPm}</p>
       <p>язык пользователя: {initData?.user?.languageCode}</p>
+      <p>Мой номер: {phone}</p>
     </SDKProvider>
   );
 };
