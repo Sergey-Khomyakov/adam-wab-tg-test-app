@@ -21,9 +21,9 @@ export const IndexPage: FC = () => {
   miniApp.requestContact().then(data => {
     if (data.contact.phoneNumber !== "") {
       navigate('/main');
-    } else {
-      navigate('/error');
     }
+  }).catch(() => {
+    navigate('/error');
   });
 
   return (
