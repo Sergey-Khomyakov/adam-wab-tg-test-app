@@ -9,12 +9,13 @@
 .logo {
     position: relative;
     margin: auto;
+    width: 8rem;
     &::after {
         content: "";
         position: absolute;
         top: -10.5%;
         left: -5.6%;
-        width: 111%;
+        width: 115%;
         height: 120%;
         border-radius: 0.5rem;
         border: 0.094rem solid var(--primary);
@@ -24,12 +25,6 @@
         animation: pulseApp 2s infinite;
         will-change: transform, border-radius, opacity;
         animation-play-state: running;
-        @media (max-width: ($breakpoint-small - 1)) {
-            width: 115%;
-        }
-    }
-    @media (max-width: ($breakpoint-small - 1)) {
-        width: 8rem;
     }
 }
 
