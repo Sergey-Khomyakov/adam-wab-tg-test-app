@@ -10,7 +10,7 @@ import { Header } from '@/components/Header/Header'
 export const mainPage: FC = () => {
     const phoneNumber = localStorage.getItem('phoneNumber');
     const { initData } = retrieveLaunchParams();
-
+    const theme = 'Dark'
     useEffect(() => {
         const [backButton] = initBackButton();
         backButton.hide();
@@ -18,7 +18,7 @@ export const mainPage: FC = () => {
 
     return (
         <SDKProvider acceptCustomStyles>
-            <Header />
+            <Header theme={theme} />
             <div className={classes.container}>
                 <h1>Добрый день</h1>
                 <p>{initData?.user?.firstName} {initData?.user?.lastName}</p>

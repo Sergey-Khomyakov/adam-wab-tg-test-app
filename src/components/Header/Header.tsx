@@ -5,10 +5,12 @@ import LogoWhite from '@/assets/LogoWhite.svg';
 
 import Icons from '@/components/Icons/Icons'
 
-export const Header: FC = () => {
-    const theme = window.matchMedia('(prefers-color-scheme: dark)');
+interface IHeader {
+    theme: string;
+}
 
-    let logoSrc = theme.matches ? LogoWhite : Logo;
+export const Header: React.FC<IHeader> = ({ theme }) => {
+    let logoSrc = theme === "Dark" ? LogoWhite : Logo;
 
     return (
         <div className={classes.header}>
