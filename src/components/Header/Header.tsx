@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import classes from './css/Header.module.css'
 import Logo from '@/assets/Logo.svg';
 import LogoWhite from '@/assets/LogoWhite.svg';
