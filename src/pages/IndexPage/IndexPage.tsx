@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import classes from './css/IndexPage.module.css'
+import Logo from './../../assets/Logo.svg';
 
 import {
   SDKProvider,
@@ -24,7 +25,7 @@ export const IndexPage: FC = () => {
   return (
     <SDKProvider acceptCustomStyles>
       <div className={classes.container}>
-        <img src={require('./../../assets/Logo.svg')} alt="" />
+        <img src={Logo} alt="" />
       </div>
     </SDKProvider>
   );
