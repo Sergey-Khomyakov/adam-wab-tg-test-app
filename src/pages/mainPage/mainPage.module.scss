@@ -1,7 +1,12 @@
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--white);
+    background-color: var(--tg-theme-bg-color);
     height: 100vh;
+}
+
+p{
+    color: var(--tg-theme-text-color);
 }

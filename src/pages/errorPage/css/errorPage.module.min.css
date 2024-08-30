@@ -1,1 +1,1 @@
-.container{display:flex;justify-content:center;align-items:center;background-color:var(--white);height:100vh}/*# sourceMappingURL=errorPage.module.min.css.map */
+.container{display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:var(--white);height:100vh}/*# sourceMappingURL=errorPage.module.min.css.map */
