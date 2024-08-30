@@ -1,1 +1,1 @@
-.container{display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:var(--tg-theme-bg-color)}p{color:var(--tg-theme-text-color)}/*# sourceMappingURL=mainPage.module.min.css.map */
+.container{display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:var(--tg-theme-bg-color);min-height:100vh}p{color:var(--tg-theme-text-color)}/*# sourceMappingURL=mainPage.module.min.css.map */
