@@ -15,7 +15,9 @@ export const IndexPage: FC = () => {
   const { initData } = retrieveLaunchParams();
   const [miniApp] = initMiniApp();
   const [phone, setPhone] = useState("");
+
   miniApp.requestContact().then(data => {
+    console.dir(data)
     setPhone(data.contact.phoneNumber)
   });
 
