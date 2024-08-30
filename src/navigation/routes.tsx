@@ -1,23 +1,18 @@
 import type { ComponentType, JSX } from 'react';
 
+import { IndexPage } from '@/pages/IndexPage/IndexPage';
+import { mainPage } from '@/pages/mainPage/mainPage';
+import { errorPage } from '@/pages/errorPage/errorPage';
+
 interface Route {
   path: string;
-  getComponent: () => Promise<ComponentType>;
+  Component: ComponentType;
   title?: string;
   icon?: JSX.Element;
 }
 
 export const routes: Route[] = [
-  {
-    path: '/',
-    getComponent: () => import('@/pages/IndexPage/IndexPage').then(m => m.IndexPage),
-  },
-  {
-    path: '/main',
-    getComponent: () => import('@/pages/mainPage/mainPage').then(m => m.mainPage),
-  },
-  {
-    path: '/error',
-    getComponent: () => import('@/pages/errorPage/errorPage').then(m => m.errorPage),
-  },
+  { path: '/', Component: IndexPage },
+  { path: '/main', Component: mainPage },
+  { path: '/error', Component: errorPage }
 ];
