@@ -16,16 +16,19 @@ import {
 export const IndexPage: FC = () => {
   const [miniApp] = initMiniApp();
   const [phone, setPhone] = useState("");
+  // const navigate = useNavigate();
 
   miniApp.requestContact().then(data => {
     setPhone(data.contact.phoneNumber);
     console.log(phone);
+    // navigate('/main');
   });
 
   return (
     <SDKProvider acceptCustomStyles>
       <div className={classes.container}>
         <img className={classes.logo} src={Logo} alt="Лого" />
+        <code>{phone}</code>
       </div>
     </SDKProvider>
   );
