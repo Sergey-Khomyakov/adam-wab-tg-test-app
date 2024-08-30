@@ -1,19 +1,25 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import classes from './css/errorPage.module.css'
 
-import { SDKProvider } from '@telegram-apps/sdk-react';
+import { SDKProvider, initBackButton } from '@telegram-apps/sdk-react';
 
 
 /**
- * Renders the IndexPage component.
+ * Renders the errorPage component.
 *
 * @return {JSX.Element} The rendered IndexPage component.
 */
 export const errorPage: FC = () => {
+
+    useEffect(() => {
+        const [backButton] = initBackButton();
+        backButton.hide();
+    }, []);
+
     return (
         <SDKProvider acceptCustomStyles>
             <div className={classes.container}>
-                <h2>Error</h2>
+                <h1>Доступ запрещен</h1>
             </div>
         </SDKProvider>
     );
