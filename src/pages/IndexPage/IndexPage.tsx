@@ -20,7 +20,8 @@ export const IndexPage: FC = () => {
 
   miniApp.requestContact().then(data => {
     if (data.contact.phoneNumber !== "") {
-      navigate(`/main?phoneNumber=${data.contact.phoneNumber}`);
+      localStorage.setItem('phoneNumber', data.contact.phoneNumber);
+      navigate('/main');
     }
   }).catch(() => {
     navigate('/error');
@@ -29,7 +30,7 @@ export const IndexPage: FC = () => {
   return (
     <SDKProvider acceptCustomStyles>
       <div className={classes.container}>
-        <p style={{ color: '#111', fontSize: '0.5rem' }}>v.1.1</p>
+        <p style={{ color: '#111', fontSize: '0.5rem' }}>v.1.2</p>
         <img className={classes.logo} src={Logo} alt="Лого" />
       </div>
     </SDKProvider>

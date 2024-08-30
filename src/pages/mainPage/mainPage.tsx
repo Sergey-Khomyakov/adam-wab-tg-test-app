@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import classes from './css/mainPage.module.css'
-import { useParams } from 'react-router-dom';
 import { SDKProvider, retrieveLaunchParams } from '@telegram-apps/sdk-react';
 
 /**
@@ -9,13 +8,13 @@ import { SDKProvider, retrieveLaunchParams } from '@telegram-apps/sdk-react';
 * @return {JSX.Element} The rendered IndexPage component.
 */
 export const mainPage: FC = () => {
-    const { phoneNumber } = useParams();
+    const phoneNumber = localStorage.getItem('phoneNumber');
     const { initData } = retrieveLaunchParams();
 
     return (
         <SDKProvider acceptCustomStyles>
             <div className={classes.container}>
-                <h1>Мои данные: </h1>
+                <h1>Мои данные</h1>
                 <p>идентификатор: {initData?.user?.id}</p>
                 <p>Имя пользователя: {initData?.user?.username}</p>
                 <p>Имя: {initData?.user?.firstName}</p>
