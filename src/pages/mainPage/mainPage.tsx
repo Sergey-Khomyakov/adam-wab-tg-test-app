@@ -1,15 +1,18 @@
 import { FC } from 'react';
 import classes from './css/mainPage.module.css'
-import { SDKProvider, retrieveLaunchParams } from '@telegram-apps/sdk-react';
+import { SDKProvider, retrieveLaunchParams, initBackButton } from '@telegram-apps/sdk-react';
+
+const phoneNumber = localStorage.getItem('phoneNumber');
+const { initData } = retrieveLaunchParams();
+
+init();
 
 /**
- * Renders the IndexPage component.
+ * Renders the mainPage component.
 *
-* @return {JSX.Element} The rendered IndexPage component.
+* @return {JSX.Element} The rendered mainPage component.
 */
 export const mainPage: FC = () => {
-    const phoneNumber = localStorage.getItem('phoneNumber');
-    const { initData } = retrieveLaunchParams();
 
     return (
         <SDKProvider acceptCustomStyles>
@@ -29,3 +32,8 @@ export const mainPage: FC = () => {
         </SDKProvider>
     );
 };
+
+function init() {
+    const [backButton] = initBackButton();
+    backButton.hide();
+}
