@@ -1,1 +1,1 @@
-.container{display:flex;justify-content:center;align-items:center;background-color:var(--tg-theme-secondary-bg-color, white)}/*# sourceMappingURL=IndexPage.module.min.css.map */
+.container{display:flex;justify-content:center;align-items:center;background-color:var(--white);height:100vh}.logo img:first-child{width:100%;height:3rem;display:block;object-fit:contain}/*# sourceMappingURL=IndexPage.module.min.css.map */
