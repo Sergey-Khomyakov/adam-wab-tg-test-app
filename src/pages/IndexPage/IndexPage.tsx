@@ -25,7 +25,7 @@ export const IndexPage: FC = () => {
   return (
     <SDKProvider acceptCustomStyles>
       <div className={classes.container}>
-        <img className='logo' src={Logo} alt="Лого" />
+        <img className={classes.logo} src={Logo} alt="Лого" />
       </div>
     </SDKProvider>
   );
