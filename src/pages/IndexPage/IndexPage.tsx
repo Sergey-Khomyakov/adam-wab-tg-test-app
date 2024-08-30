@@ -1,7 +1,8 @@
 import { FC, useState } from 'react';
+import classes from './css/IndexPage.module.css'
+
 import {
   SDKProvider,
-  retrieveLaunchParams,
   initMiniApp
 } from '@telegram-apps/sdk-react';
 
@@ -12,28 +13,19 @@ import {
 * @return {JSX.Element} The rendered IndexPage component.
 */
 export const IndexPage: FC = () => {
-  const { initData } = retrieveLaunchParams();
   const [miniApp] = initMiniApp();
   const [phone, setPhone] = useState("");
 
   miniApp.requestContact().then(data => {
-    console.dir(data)
-    setPhone(data.contact.phoneNumber)
+    setPhone(data.contact.phoneNumber);
+    console.log(phone);
   });
 
   return (
-    <SDKProvider acceptCustomStyles debug>
-      <h1>Мои данные: </h1>
-      <p>идентификатор: {initData?.user?.id}</p>
-      <p>Имя пользователя: {initData?.user?.username}</p>
-      <p>Имя: {initData?.user?.firstName}</p>
-      <p>Фамилия: {initData?.user?.lastName}</p>
-      <p>Premium: {initData?.user?.isPremium}</p>
-      <p>URL-адрес фотографии профиля пользователя: {initData?.user?.photoUrl}</p>
-      <p>пользователь добавил бота в меню вложений: {initData?.user?.addedToAttachmentMenu}</p>
-      <p>пользователь разрешил боту отправлять ему сообщения: {initData?.user?.allowsWriteToPm}</p>
-      <p>язык пользователя: {initData?.user?.languageCode}</p>
-      <p>Мой номер: {phone}</p>
+    <SDKProvider acceptCustomStyles>
+      <div className={classes.container}>
+        <img src={require('./assets/Logo.svg')} alt="" />
+      </div>
     </SDKProvider>
   );
 };
