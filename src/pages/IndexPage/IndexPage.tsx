@@ -1,6 +1,7 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import classes from './css/IndexPage.module.css'
 import Logo from '@/assets/Logo.svg';
+import { useNavigate } from 'react-router-dom';
 
 import {
   SDKProvider,
@@ -15,20 +16,20 @@ import {
 */
 export const IndexPage: FC = () => {
   const [miniApp] = initMiniApp();
-  const [phone, setPhone] = useState("");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   miniApp.requestContact().then(data => {
-    setPhone(data.contact.phoneNumber);
-    console.log(phone);
-    // navigate('/main');
+    if (data.contact.phoneNumber !== "") {
+      navigate('/main');
+    } else {
+      navigate('/error');
+    }
   });
 
   return (
     <SDKProvider acceptCustomStyles>
       <div className={classes.container}>
         <img className={classes.logo} src={Logo} alt="Лого" />
-        <code>{phone}</code>
       </div>
     </SDKProvider>
   );
