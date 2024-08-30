@@ -1,0 +1,1 @@
+import{r as e,j as r}from"./index-hh1UCnD3.js";import{j as s,u as c}from"./index-BnHbAtCf.js";const n="_container_xl1cm_1",o={container:n},m=()=>(e.useEffect(()=>{const[t]=s();t.hide()},[]),r.jsx(c,{acceptCustomStyles:!0,children:r.jsx("div",{className:o.container,children:r.jsx("h1",{children:"Доступ запрещен"})})}));export{m as errorPage};
