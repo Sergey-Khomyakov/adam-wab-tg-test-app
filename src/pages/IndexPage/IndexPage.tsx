@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import classes from './css/IndexPage.module.css'
-import Logo from './../../assets/Logo.svg';
+import Logo from '@/assets/Logo.svg';
 
 import {
   SDKProvider,
