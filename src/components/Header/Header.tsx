@@ -9,7 +9,7 @@ interface IHeader {
 }
 
 export const Header: React.FC<IHeader> = ({ theme }) => {
-    let logoSrc = window.Telegram.colorScheme === "dark" ? LogoWhite : Logo;
+    let logoSrc = theme === "dark" ? LogoWhite : Logo;
 
     return (
         <div className={classes.header}>

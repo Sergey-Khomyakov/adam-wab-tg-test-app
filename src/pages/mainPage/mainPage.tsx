@@ -2,6 +2,7 @@ import { FC, useEffect } from 'react';
 import classes from './css/mainPage.module.css'
 import { SDKProvider, retrieveLaunchParams, initBackButton } from '@telegram-apps/sdk-react';
 import { Header } from '@/components/Header/Header'
+
 /**
  * Renders the IndexPage component.
 *
@@ -9,8 +10,8 @@ import { Header } from '@/components/Header/Header'
 */
 export const mainPage: FC = () => {
     const phoneNumber = localStorage.getItem('phoneNumber');
-    const { initData, themeParams } = retrieveLaunchParams();
-    const theme = 'Dark';
+    const { initData } = retrieveLaunchParams();
+    const theme = (window as any).Telegram!.colorScheme || 'light';
 
 
     useEffect(() => {
