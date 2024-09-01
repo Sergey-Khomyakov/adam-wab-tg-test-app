@@ -9,8 +9,10 @@ import { Header } from '@/components/Header/Header'
 */
 export const mainPage: FC = () => {
     const phoneNumber = localStorage.getItem('phoneNumber');
-    const { initData } = retrieveLaunchParams();
-    const theme = 'Dark'
+    const { initData, themeParams } = retrieveLaunchParams();
+    const theme = 'Dark';
+
+
     useEffect(() => {
         const [backButton] = initBackButton();
         backButton.hide();

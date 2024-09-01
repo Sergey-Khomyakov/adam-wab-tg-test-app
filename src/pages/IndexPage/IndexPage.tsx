@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import {
   SDKProvider,
-  initMiniApp
+  initMiniApp,
 } from '@telegram-apps/sdk-react';
 
 
@@ -17,7 +17,6 @@ import {
 export const IndexPage: FC = () => {
   const [miniApp] = initMiniApp();
   const navigate = useNavigate();
-
   miniApp.requestContact().then(data => {
     if (data.contact.phoneNumber !== "") {
       localStorage.setItem('phoneNumber', data.contact.phoneNumber);
