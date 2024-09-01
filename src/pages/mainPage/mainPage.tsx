@@ -11,7 +11,7 @@ import { Header } from '@/components/Header/Header'
 export const mainPage: FC = () => {
     const phoneNumber = localStorage.getItem('phoneNumber');
     const { initData } = retrieveLaunchParams();
-    const theme = (window as any).Telegram!.colorScheme || 'light';
+    const theme = (window as any).Telegram!.WebApp.colorScheme || 'light';
 
 
     useEffect(() => {
