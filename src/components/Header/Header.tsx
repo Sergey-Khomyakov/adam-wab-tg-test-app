@@ -5,16 +5,15 @@ import LogoWhite from '@/assets/LogoWhite.svg';
 import Icons from '@/components/Icons/Icons'
 
 interface IHeader {
-    theme: string;
+    isDark: boolean;
 }
 
-export const Header: React.FC<IHeader> = ({ theme }) => {
-    let logoSrc = theme === "dark" ? LogoWhite : Logo;
+export const Header: React.FC<IHeader> = ({ isDark }) => {
+    let logoSrc = isDark !== true ? LogoWhite : Logo;
 
     return (
         <div className={classes.header}>
             <img className={classes.logo} src={logoSrc} alt="Лого" />
-            <p>{theme}</p>
             <div className={classes.btn}>
                 <Icons id="List"></Icons>
             </div>

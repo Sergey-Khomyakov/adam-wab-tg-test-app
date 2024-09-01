@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
 import classes from './css/mainPage.module.css'
-import { SDKProvider, retrieveLaunchParams, initBackButton } from '@telegram-apps/sdk-react';
+import { SDKProvider, retrieveLaunchParams, initBackButton, initThemeParams } from '@telegram-apps/sdk-react';
 import { Header } from '@/components/Header/Header'
 
 /**
@@ -11,7 +11,8 @@ import { Header } from '@/components/Header/Header'
 export const mainPage: FC = () => {
     const phoneNumber = localStorage.getItem('phoneNumber');
     const { initData } = retrieveLaunchParams();
-    const theme = (window as any).Telegram!.WebApp.colorScheme || 'light';
+    const [themeParams] = initThemeParams();
+    const isDark = themeParams.isDark;
 
 
     useEffect(() => {
@@ -21,7 +22,7 @@ export const mainPage: FC = () => {
 
     return (
         <SDKProvider acceptCustomStyles>
-            <Header theme={theme} />
+            <Header isDark={isDark} />
             <div className={classes.container}>
                 <h1>Добрый день</h1>
                 <p>Тема: {(window as any).Telegram!.WebApp.colorScheme}</p>
