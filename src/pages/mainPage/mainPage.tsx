@@ -25,7 +25,6 @@ export const mainPage: FC = () => {
             <Header isDark={isDark} />
             <div className={classes.container}>
                 <h1>Добрый день</h1>
-                <p>Тема: {(window as any).Telegram!.WebApp.colorScheme}</p>
                 <p>{initData?.user?.firstName} {initData?.user?.lastName}</p>
                 <p>{phoneNumber}</p>
             </div>

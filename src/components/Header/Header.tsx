@@ -9,13 +9,15 @@ interface IHeader {
 }
 
 export const Header: React.FC<IHeader> = ({ isDark }) => {
-    let logoSrc = isDark !== true ? LogoWhite : Logo;
+    let logoSrc = isDark === true ? LogoWhite : Logo;
 
     return (
         <div className={classes.header}>
             <img className={classes.logo} src={logoSrc} alt="Лого" />
             <div className={classes.btn}>
-                <Icons id="List"></Icons>
+                <div className={isDark === true ? classes.icon : classes.icon__white}>
+                    <Icons id="List"></Icons>
+                </div>
             </div>
         </div>
     );

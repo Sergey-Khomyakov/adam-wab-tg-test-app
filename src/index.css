@@ -21,6 +21,8 @@ body {
   --gray-300: #e5e8ed;
   --gray-200: #f4f5f6;
   --gray-100: #f9f9f9;
+  --filter-white: brightness(0) saturate(100%) invert(97%) sepia(33%) saturate(2%) hue-rotate(251deg) brightness(106%) contrast(101%);
+  --filter-black: brightness(0) saturate(100%) invert(8%) sepia(0%) saturate(2051%) hue-rotate(169deg) brightness(96%) contrast(102%);
 }
 
 @font-face {
