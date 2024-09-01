@@ -14,6 +14,7 @@ export const Header: React.FC<IHeader> = ({ theme }) => {
     return (
         <div className={classes.header}>
             <img className={classes.logo} src={logoSrc} alt="Лого" />
+            <p>{theme}</p>
             <div className={classes.btn}>
                 <Icons id="List"></Icons>
             </div>
