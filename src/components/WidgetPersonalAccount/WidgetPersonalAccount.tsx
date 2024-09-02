@@ -4,9 +4,14 @@ interface IWidgetPersonalAccount {
 }
 
 export const WidgetPersonalAccount: React.FC<IWidgetPersonalAccount> = ({ isDark }) => {
+    let className = `${classes.widgetPersonalAccount}`;
+
+    if (isDark === true) {
+        className += ` ${classes.dark__mode}`;
+    }
 
     return (
-        <div className={classes.header}>
+        <div className={className}>
         </div>
     );
 };
