@@ -32,7 +32,7 @@ export const BurgerMenu: React.FC<IBurgerMenu> = ({ isDark, isActive, nav, style
 
     return (
         <div className={className} style={{ top: style.top + "px" }}>
-            <div className='.container'>
+            <div className='container'>
                 <div className={classes.burgerMenu__header}>
                 </div>
                 <div className={classes.burgerMenu__body}>

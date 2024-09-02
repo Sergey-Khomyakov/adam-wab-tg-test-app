@@ -28,6 +28,7 @@
     &__box {
         display: flex;
         align-items: center;
+        gap: 0.25rem;
         padding: 0 0.2rem;
     }
     &__list {
@@ -42,14 +43,18 @@
         box-shadow: 0 1px 1px 0 rgba(13, 63, 175, 0.02), 0 2px 2px 0 rgba(13, 63, 175, 0.03), 0 4px 4px 0 rgba(13, 63, 175, 0.04), 0 9px 10px 0 rgba(13, 63, 175, 0.04), 0 21px 21px 0 rgba(13, 63, 175, 0.05), 0 61px 63px 0 rgba(13, 63, 175, 0.07);
     }
     &__item {
-        padding: 0.75rem;
+        svg {
+            width: 100%;
+            height: 100%;
+            filter: var(--filter-primary);
+        }
     }
     &__btn {
         cursor: pointer;
         width: 1.25rem;
         height: 1.25rem;
         transition: all 1s;
-        img {
+        svg {
             width: 100%;
             height: 100%;
             filter: var(--filter-primary);
@@ -60,6 +65,7 @@
         font-weight: 600;
         padding: 12px 16px;
         width: 100%;
+        text-decoration: unset;
     }
     &__description{
         margin: 0.25rem 0 0 0;

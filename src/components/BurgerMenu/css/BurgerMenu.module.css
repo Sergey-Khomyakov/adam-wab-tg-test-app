@@ -7,6 +7,7 @@
   background: var(--white-color);
   z-index: 999;
   transition: width 1s;
+  padding: 1rem 0;
 }
 .burgerMenu > * {
   visibility: hidden;

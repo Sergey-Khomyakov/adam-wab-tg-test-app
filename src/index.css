@@ -6,7 +6,7 @@ body {
 
 :root {
   --white: #fff;
-  --black: #111;
+  --black: #231F20;
   --primary: #EE2A24;
   --secondary: #00f0b5;
   --success: #03cea4;
@@ -161,7 +161,7 @@ table {
 }
 
 .container {
-  width: 100%;
+  width: auto;
   padding: 0 1rem;
 }
 
