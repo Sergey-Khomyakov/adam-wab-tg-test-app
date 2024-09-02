@@ -1,16 +1,18 @@
 .burgerMenu {
   overflow: hidden;
-  display: none;
   position: absolute;
   right: 0;
   width: 0%;
   height: 100vh;
-  background: #fff;
+  background: var(--white-color);
   z-index: 999;
   transition: width 1s;
 }
 .burgerMenu > * {
   visibility: hidden;
+}
+.burgerMenu.dark__mode {
+  background: var(--black-color);
 }
 .burgerMenu.active {
   width: 100%;

@@ -19,6 +19,7 @@
     &.dropdown__active {
         .dropdown__list {
             height: 100%;
+            width: 100%;
         }
         .dropdown__btn {
             transform: rotate(180deg);
