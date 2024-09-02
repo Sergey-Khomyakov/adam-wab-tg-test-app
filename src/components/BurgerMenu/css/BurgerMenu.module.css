@@ -15,9 +15,6 @@
 .burgerMenu.active {
   width: 100%;
 }
-.burgerMenu.active .btn-burger {
-  display: block;
-}
 .burgerMenu.active > *,
 .burgerMenu.active .nav__items {
   visibility: unset;

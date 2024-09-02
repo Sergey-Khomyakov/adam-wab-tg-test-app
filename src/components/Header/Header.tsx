@@ -58,7 +58,7 @@ export const Header: React.FC<IHeader> = ({ isDark }) => {
             <img className={classes.logo} src={logoSrc} alt="Лого" />
             <div className={classes.btn}>
                 <div className={classes.icon} onClick={toggleMenu}>
-                    {isMenuActive ? <Icons id="Close"></Icons> : <Icons id="List"></Icons>}
+                    {isMenuActive ? <Icons id="X"></Icons> : <Icons id="List"></Icons>}
                 </div>
             </div>
             <BurgerMenu isDark={isDark} isActive={isMenuActive} nav={nav} style={{ top: headerHeight }} />

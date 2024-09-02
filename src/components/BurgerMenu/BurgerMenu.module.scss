@@ -13,9 +13,6 @@
     }
     &.active{
         width: 100%;
-        .btn-burger {
-            display: block;
-        }
         &>*,
         .nav__items {
             visibility: unset;
