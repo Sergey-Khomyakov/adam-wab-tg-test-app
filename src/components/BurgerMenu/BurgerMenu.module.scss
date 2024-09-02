@@ -1,0 +1,6 @@
+.burgerMenu{
+    display: none;
+    &.active{
+        display: block;
+    }
+}

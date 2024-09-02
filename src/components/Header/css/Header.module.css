@@ -4,15 +4,13 @@
   align-items: center;
   padding: 1rem;
 }
-
-.logo {
-  width: 8rem;
+.header.dark__mode .icon {
+  filter: var(--filter-white);
 }
-
-.icon {
+.header .icon {
   filter: var(--filter-black);
 }
 
-.icon__white {
-  filter: var(--filter-white);
+.logo {
+  width: 8rem;
 }/*# sourceMappingURL=Header.module.css.map */

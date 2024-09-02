@@ -1,0 +1,6 @@
+.burgerMenu {
+  display: none;
+}
+.burgerMenu.active {
+  display: block;
+}/*# sourceMappingURL=BurgerMenu.module.css.map */

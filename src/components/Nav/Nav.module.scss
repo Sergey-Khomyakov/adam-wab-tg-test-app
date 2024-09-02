@@ -1,0 +1,9 @@
+.nav{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &.dark__mode{
+        background: var(--black-color);
+    }
+}
