@@ -1,5 +1,4 @@
 import classes from './css/Search.module.css'
-import Icons from '@/components/Icons/Icons'
 
 interface ISearch {
     isDark: boolean;
