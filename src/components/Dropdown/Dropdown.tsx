@@ -33,8 +33,8 @@ export const Dropdown: React.FC<IDropdown> = ({ isDark, item }) => {
     }
     return (
         <div className={className}>
-            <div className={classes.dropdown__box}>
-                <div className={classes.dropdown__item} onClick={toggleMenu}>
+            <div className={classes.dropdown__box} onClick={item.listLinks !== null ? toggleMenu : undefined} >
+                <div className={classes.dropdown__item} >
                     {item.listLinks !== null ? (
                         <p className={classes.dropdown__title}>{item.title}</p>
                     ) : (
@@ -42,7 +42,7 @@ export const Dropdown: React.FC<IDropdown> = ({ isDark, item }) => {
                     )}
                 </div>
                 {item.listLinks !== null ? (
-                    <div className={classes.dropdown__btn}>
+                    <div className={classes.dropdown__btn} onClick={item.listLinks !== null ? undefined : toggleMenu}>
                         <Icons id="CaretDown" />
                     </div>
                 ) : null}
