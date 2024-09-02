@@ -4,6 +4,10 @@
   align-items: center;
   padding: 1rem;
   position: relative;
+  background: var(--gray-200);
+}
+.header.dark__mode {
+  background: var(--black);
 }
 .header.dark__mode .icon {
   filter: var(--filter-white);

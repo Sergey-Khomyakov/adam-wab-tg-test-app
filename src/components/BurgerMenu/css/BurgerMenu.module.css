@@ -12,7 +12,7 @@
   visibility: hidden;
 }
 .burgerMenu.dark__mode {
-  background: var(--black-color);
+  background: var(--black);
 }
 .burgerMenu.active {
   width: 100%;

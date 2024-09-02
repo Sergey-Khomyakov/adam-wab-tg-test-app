@@ -15,9 +15,16 @@ export const Header: React.FC<IHeader> = ({ isDark }) => {
     const [headerHeight, setHeaderHeight] = useState(0);
 
     useEffect(() => {
-        if (headerRef.current) {
-            setHeaderHeight(headerRef.current.offsetHeight);
-        }
+        const handleResize = () => {
+            if (headerRef.current) {
+                setHeaderHeight(headerRef.current.getBoundingClientRect().height);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, [headerRef]);
 
     const [isMenuActive, setIsMenuActive] = useState(false);

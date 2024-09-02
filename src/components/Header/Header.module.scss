@@ -4,7 +4,9 @@
     align-items: center;
     padding: 1rem;
     position: relative;
+    background: var(--gray-200);
     &.dark__mode{
+        background: var(--black);
         .icon{
             filter: var(--filter-white);
         }
