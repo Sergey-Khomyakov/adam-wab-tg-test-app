@@ -36,9 +36,9 @@ export const Dropdown: React.FC<IDropdown> = ({ isDark, item }) => {
             <div className={classes.dropdown__box}>
                 <div className={classes.dropdown__item} onClick={toggleMenu}>
                     {item.listLinks !== null ? (
-                        <a className={classes.dropdown__title} href={item.link}>{item.title}</a>
-                    ) : (
                         <p className={classes.dropdown__title}>{item.title}</p>
+                    ) : (
+                        <a className={classes.dropdown__title} href={item.link}>{item.title}</a>
                     )}
                 </div>
                 {item.listLinks !== null ? (

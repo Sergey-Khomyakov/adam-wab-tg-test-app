@@ -3,11 +3,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  position: relative;
 }
 .header.dark__mode .icon {
   filter: var(--filter-white);
 }
 .header .icon {
+  cursor: pointer;
   filter: var(--filter-black);
 }
 

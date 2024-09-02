@@ -3,12 +3,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    position: relative;
     &.dark__mode{
         .icon{
             filter: var(--filter-white);
         }
     }
     .icon{
+        cursor: pointer;
         filter: var(--filter-black);
     }
 }

@@ -1,1 +1,1 @@
-.burgerMenu{display:none}.burgerMenu.active{display:block}/*# sourceMappingURL=BurgerMenu.module.min.css.map */
+.burgerMenu{overflow:hidden;display:none;position:absolute;right:0;width:0%;height:100vh;background:#fff;z-index:999;transition:width 1s}.burgerMenu>*{visibility:hidden}.burgerMenu.active{width:100%}.burgerMenu.active .btn-burger{display:block}.burgerMenu.active>*,.burgerMenu.active .nav__items{visibility:unset}/*# sourceMappingURL=BurgerMenu.module.min.css.map */

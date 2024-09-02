@@ -1,1 +1,1 @@
-.header{display:flex;justify-content:space-between;align-items:center;padding:1rem}.header.dark__mode .icon{filter:var(--filter-white)}.header .icon{filter:var(--filter-black)}.logo{width:8rem}/*# sourceMappingURL=Header.module.min.css.map */
+.header{display:flex;justify-content:space-between;align-items:center;padding:1rem;position:relative}.header.dark__mode .icon{filter:var(--filter-white)}.header .icon{cursor:pointer;filter:var(--filter-black)}.logo{width:8rem}/*# sourceMappingURL=Header.module.min.css.map */

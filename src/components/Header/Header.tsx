@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import classes from './css/Header.module.css'
 import Logo from '@/assets/Logo.svg';
 import LogoWhite from '@/assets/LogoWhite.svg';
@@ -11,6 +11,14 @@ interface IHeader {
 
 export const Header: React.FC<IHeader> = ({ isDark }) => {
     let logoSrc = isDark === true ? LogoWhite : Logo;
+    const headerRef = useRef<HTMLDivElement>(null);
+    const [headerHeight, setHeaderHeight] = useState(0);
+
+    useEffect(() => {
+        if (headerRef.current) {
+            setHeaderHeight(headerRef.current.offsetHeight);
+        }
+    }, [headerRef]);
 
     const [isMenuActive, setIsMenuActive] = useState(false);
     const nav = [
@@ -50,10 +58,10 @@ export const Header: React.FC<IHeader> = ({ isDark }) => {
             <img className={classes.logo} src={logoSrc} alt="Лого" />
             <div className={classes.btn}>
                 <div className={classes.icon} onClick={toggleMenu}>
-                    <Icons id="List"></Icons>
+                    {isMenuActive ? <Icons id="Close"></Icons> : <Icons id="List"></Icons>}
                 </div>
             </div>
-            <BurgerMenu isDark={isDark} isActive={isMenuActive} nav={nav} />
+            <BurgerMenu isDark={isDark} isActive={isMenuActive} nav={nav} style={{ top: headerHeight }} />
         </div>
     );
 };

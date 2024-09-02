@@ -5,6 +5,9 @@ import { Nav } from '@/components/Nav/Nav';
 interface IBurgerMenu {
     isDark: boolean;
     isActive: boolean;
+    style: {
+        top: number
+    }
     nav: Array<{
         title: string;
         link: string;
@@ -16,7 +19,7 @@ interface IBurgerMenu {
         }> | null;
     }>;
 }
-export const BurgerMenu: React.FC<IBurgerMenu> = ({ isDark, isActive, nav }) => {
+export const BurgerMenu: React.FC<IBurgerMenu> = ({ isDark, isActive, nav, style }) => {
     let className = `${classes.burgerMenu}`;
 
     if (isActive === true) {
@@ -28,13 +31,15 @@ export const BurgerMenu: React.FC<IBurgerMenu> = ({ isDark, isActive, nav }) => 
     }
 
     return (
-        <div className={className}>
-            <div className={classes.burgerMenu__header}>
-            </div>
-            <div className={classes.burgerMenu__body}>
-                <Nav isDark={isDark} items={nav}></Nav>
-            </div>
-            <div className={classes.burgerMenu__footer}>
+        <div className={className} style={{ top: style.top + "px" }}>
+            <div className='.container'>
+                <div className={classes.burgerMenu__header}>
+                </div>
+                <div className={classes.burgerMenu__body}>
+                    <Nav isDark={isDark} items={nav}></Nav>
+                </div>
+                <div className={classes.burgerMenu__footer}>
+                </div>
             </div>
         </div>
     );
